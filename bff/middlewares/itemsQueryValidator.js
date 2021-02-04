@@ -8,7 +8,7 @@ const itemsQueryValidator = (req, res, next) => {
         next();
     } else {
         res.status(400).send('Missing required query params');
-    }
+    };
 }
 
 const validateParams = (requestQueryParams, req) => {
