@@ -3,7 +3,7 @@ const priceFormater = require('./priceFormater');
 
 const formatItemSearchResult = (rawItemServerResponseData, rawItemDescriptionServerResponseData) => {
     const {id, title, price, currency_id, condition, sold_quantity} = rawItemServerResponseData;
-    const itemPicture = rawItemServerResponseData.pictures[0]?.url;
+    const itemPicture = rawItemServerResponseData.pictures[0].url;
 
     const description = rawItemDescriptionServerResponseData.plain_text;
 

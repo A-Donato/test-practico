@@ -1,6 +1,7 @@
 const requiredQueryParams = ['q']
 
 const itemsQueryValidator = (req, res, next) => {
+    console.log('req', req.query)
     const requestQueryParams = Object.keys(req.query);
     const areRequiredParamsValid = validateParams(requestQueryParams, req);
 

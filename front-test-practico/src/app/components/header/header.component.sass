@@ -1,0 +1,17 @@
+@import 'src/styles/_variables'
+
+:host 
+  display: flex
+
+  .header-container
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: map-get($custom-colors, yellow-background)
+
+    .search-bar
+      width: 50%
+      max-width: map-get($custom-width, max-view)
+      min-width: 450px
+
