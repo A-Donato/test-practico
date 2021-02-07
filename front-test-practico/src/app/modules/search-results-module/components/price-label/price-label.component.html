@@ -1,0 +1,6 @@
+<div class="container">
+    <h2 class="price"> {{currencySymbol}}{{price.amount}}</h2>
+    <ng-container *ngIf="price.decimals" >
+        <h5 class="decimals">{{price.decimals}}</h5>
+    </ng-container>
+</div>

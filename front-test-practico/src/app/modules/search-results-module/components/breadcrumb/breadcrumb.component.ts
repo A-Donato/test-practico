@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { SearchResultsService } from './../services/search-results.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'search-results-breadcrumb',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./breadcrumb.component.sass']
 })
 export class BreadcrumbComponent implements OnInit {
+  @Input() catergories: string[] = [];
 
-  constructor() { }
+  constructor( private searchResultsService: SearchResultsService ) { }
 
   ngOnInit(): void {
+    this.searchResultsService.getBreadcrumItems().subscribe(response => {
+      this.catergories = response;
+    })
   }
 
 }

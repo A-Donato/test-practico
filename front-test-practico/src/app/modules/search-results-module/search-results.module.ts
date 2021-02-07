@@ -6,9 +6,10 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
 import { ItemDetailsComponent } from './components/item-details/item-details.component';
 import { ResultsListComponent } from './components/results-list/results-list.component';
 import { ResultItemComponent } from './components/results-list/components/result-item/result-item.component';
+import { PriceLabelComponent } from './components/price-label/price-label.component';
 
 @NgModule({
-  declarations: [SearchResultsComponent, BreadcrumbComponent, ItemDetailsComponent, ResultsListComponent, ResultItemComponent],
+  declarations: [SearchResultsComponent, BreadcrumbComponent, ItemDetailsComponent, ResultsListComponent, ResultItemComponent, PriceLabelComponent],
   imports: [
     CommonModule,
     SearchResultsRoutingModule

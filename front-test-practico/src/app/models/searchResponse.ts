@@ -15,7 +15,8 @@ export interface SearchItem {
     price: ItemPrice
     picture: string,
     condition: string,
-    free_shipping: boolean
+    free_shipping: boolean,
+    location: string
 }
 
 export interface ItemPrice {

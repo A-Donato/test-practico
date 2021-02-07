@@ -1,4 +1,6 @@
+import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
+import { ItemPrice } from 'src/app/models/searchResponse';
 
 @Component({
   selector: 'search-result-item',
@@ -7,13 +9,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ResultItemComponent implements OnInit {
   @Input() imageSrc: string = '';
-  @Input() price: string = '';
-  @Input() description: string = ''; 
+  @Input() price!: ItemPrice;
+  @Input() title: string = ''; 
   @Input() location: string = ''; 
+  @Input() itemId: string = ''; 
 
-  constructor() { }
+
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
+  }
+
+  handleClick() {
+    this.route.navigate([`items/${this.itemId}`])
   }
 
 }

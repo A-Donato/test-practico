@@ -21,12 +21,11 @@ export class SearchResultsComponent implements OnInit {
 
   private subscribeToQueryParamsChange() {
     this.route.queryParams.subscribe((queryParams:any) => {
-      console.log('queryParams', queryParams)
-      this.searchText = queryParams.q;
-      this.searchResultService.search(this.searchText).subscribe(response => {
-        console.log('response', response);
-      });
-     });
+      this.searchText = queryParams.search ? queryParams.search : '';
+      if(this.searchText) {
+        this.searchResultService.search(this.searchText);
+      }
+    })
   }
 
 }

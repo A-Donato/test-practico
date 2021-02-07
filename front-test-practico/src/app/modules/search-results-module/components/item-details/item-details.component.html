@@ -1,1 +1,21 @@
-<p>item-details works!</p>
+<ng-container *ngIf="selectedItem">
+    <div class="container">
+        <section class="details">
+            <div class="image">
+                <img
+                    [src]="selectedItem.picture"
+                    alt="Imagen del producto"
+                    height="400"
+                    width="400"
+                >
+            </div>
+            <div class="description">
+                <h2>Descripcion del Producto</h2>
+                <p>{{selectedItem.description}}</p>
+            </div>
+        </section>
+        <section class="buying">
+            
+        </section>
+    </div>
+</ng-container>

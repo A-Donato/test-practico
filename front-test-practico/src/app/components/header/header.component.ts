@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   handleOnSearch(searchText: string) {
     const navigationExtras: NavigationExtras = {
-      queryParams: {'q': searchText}
+      queryParams: {'search': searchText}
     }
 
     this.router.navigate(['/items'], navigationExtras);

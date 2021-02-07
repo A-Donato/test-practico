@@ -1,1 +1,9 @@
-<p>breadcrumb works!</p>
+<div class="container">
+    <ng-container *ngFor="let category of catergories; let i=index">
+        {{category}}
+        <ng-container *ngIf="i+1 < this.catergories.length">
+        >
+        </ng-container>
+        
+    </ng-container>
+</div>
