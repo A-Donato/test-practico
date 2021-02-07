@@ -33,7 +33,7 @@ const parseResultsIntoItems = (results) => {
 
 const parseFiltersIntoCategories = (availableFilters) => {
     const categoryFilter = availableFilters.find(filter => filter.id === 'category');
-    const categories = categoryFilter.values.map( category => category.name );
+    const categories = categoryFilter ? categoryFilter.values.map( category => category.name ) : [];
 
     return categories;
 };

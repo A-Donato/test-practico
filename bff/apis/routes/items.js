@@ -21,13 +21,19 @@ route.get(`${apiPrefix}/:id`, async (req, res) => {
 
     try {
         const itemServerResponse = await axios.get(itemEndpoint);
-        const itemDescriptionServerResponse = await axios.get(descriptionEndpoint);
+        let itemDescriptionServerResponse = {data: { plain_text: '' }};
+        try {
+            itemDescriptionServerResponse = await axios.get(descriptionEndpoint);
+        } catch (error) {
+            console.log('no description for itemId: ', itemId);
+        }
         
         const formatedResponse = formatItemSearchResult(itemServerResponse.data, itemDescriptionServerResponse.data);
         res.status(200).json(formatedResponse);
     } catch (error) {
         const errorMessage = errorMessages.api.itemInformation.replace(':id', itemId);
         res.status(500).send(errorMessage);
+        console.log(error)
     }
 });
 
@@ -45,7 +51,8 @@ route.get(apiPrefix, async (req, res) => {
         
         res.status(200).json(formatedResponse);
     } catch (error) {
-        res.status(500).send(errorMessages.generic);
+        res.status(500).send(errorMessages.generic); //TODO: Improve error handling
+        console.log(error)
     }
 });
 
