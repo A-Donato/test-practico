@@ -7,12 +7,15 @@ import { ItemDetailsComponent } from './components/item-details/item-details.com
 import { ResultsListComponent } from './components/results-list/results-list.component';
 import { ResultItemComponent } from './components/results-list/components/result-item/result-item.component';
 import { PriceLabelComponent } from './components/price-label/price-label.component';
+import { BuyingCardComponent } from './components/item-details/components/buying-card/buying-card.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
-  declarations: [SearchResultsComponent, BreadcrumbComponent, ItemDetailsComponent, ResultsListComponent, ResultItemComponent, PriceLabelComponent],
+  declarations: [SearchResultsComponent, BreadcrumbComponent, ItemDetailsComponent, ResultsListComponent, ResultItemComponent, PriceLabelComponent, BuyingCardComponent],
   imports: [
     CommonModule,
-    SearchResultsRoutingModule
+    SearchResultsRoutingModule,
+    MatButtonModule
   ]
 })
 export class SearchModuleModule { }

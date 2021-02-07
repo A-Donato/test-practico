@@ -2,7 +2,8 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { ItemPrice } from 'src/app/models/searchResponse';
 
 enum CurrencyTypes {
-  'Peso' = 'ARS'
+  'Peso' = 'ARS',
+  'Dolar' = 'USD'
 }
 
 @Component({
@@ -12,6 +13,7 @@ enum CurrencyTypes {
 })
 export class PriceLabelComponent implements OnInit, OnChanges {
   @Input() price!: ItemPrice;
+  @Input() type: string = 'normal';
   currencySymbol: string = '';
 
   constructor() { }
@@ -27,10 +29,13 @@ export class PriceLabelComponent implements OnInit, OnChanges {
     let result = '';
     switch (currency) {
       case CurrencyTypes.Peso:
-        result = '$'
+        result = '$';
         break;
-    
+      case CurrencyTypes.Dolar:
+        result = 'u$s ';
+        break
       default:
+        result = currency;
         break;
     }
 
