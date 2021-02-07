@@ -7,7 +7,7 @@ const formatSearchResponse = (rawSearchResponse) => {
 
     const formatedItems = results.length > 0 ? parseResultsIntoItems(results) : [];
     const formatedCategories = availableFilters.length > 0 ? parseFiltersIntoCategories(availableFilters) : [];
-    
+
     return {
         author: getAuthor(),
         categories: formatedCategories,
@@ -23,6 +23,7 @@ const parseResultsIntoItems = (results) => {
             price: priceFormater(result.price, result.currency_id),
             picture: result.thumbnail,
             condition: result.condition,
+            location: result.address.state_name,
             free_shipping: result.shipping.free_shipping
         };
     });
