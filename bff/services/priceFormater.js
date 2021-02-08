@@ -6,6 +6,6 @@ const priceFormater = (price, currency) => {
     };
 }
 
-const getDecimalPart = (price) => (price % 1).toFixed(2)*100;
+const getDecimalPart = (price) => Math.round((price % 1).toFixed(2)*100); 
 
 module.exports = priceFormater;
