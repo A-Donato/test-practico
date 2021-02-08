@@ -1,0 +1,17 @@
+@import src/styles/_variables.sass
+
+:host
+    display: flex
+    flex-direction: column
+    justify-content: center
+    width: 100%
+
+    .container
+        width: $custom-width
+        margin: auto
+
+
+@media (max-width: $custom-width) 
+.container
+    padding: 0 1rem
+

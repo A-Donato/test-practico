@@ -1,0 +1,21 @@
+@import 'src/styles/_variables'
+
+:host 
+  display: flex
+
+  .header-container
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: $ml-yellow
+
+    .search-bar
+      width: $custom-width
+
+
+  @media (max-width: $custom-width) 
+    .header-container
+      width: auto
+      padding: 0 1rem
+

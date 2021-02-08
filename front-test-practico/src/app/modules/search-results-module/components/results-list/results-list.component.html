@@ -1,0 +1,11 @@
+<section class="search-results" *ngIf="searchResultItems.length > 0">
+    <ng-container *ngFor="let item of searchResultItems" >
+        <search-result-item
+            [price]="item.price"
+            [location]="item.location"
+            [title]="item.title"
+            [imageSrc]="item.picture"
+            [itemId]="item.id"
+        ></search-result-item>
+    </ng-container>
+</section>

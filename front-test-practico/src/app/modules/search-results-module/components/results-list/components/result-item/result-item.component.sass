@@ -1,0 +1,33 @@
+@import src/styles/_variables.sass
+
+.item-container
+    width: 100%
+    min-width: 685px
+    height: 180px
+    display: flex
+    flex-direction: row
+    background-color: $ml-white
+
+    .image
+        width: 25%
+        display: flex
+        align-items: center
+        justify-content: center
+
+        :hover
+            cursor: pointer
+
+    .information
+        width: 50%
+        display: flex
+        flex-direction: column
+        padding: 1rem 0
+
+        p:hover
+            cursor: pointer
+
+    .location
+        width: 25%
+        padding: 1rem 0 1rem 1rem
+        display: flex
+        

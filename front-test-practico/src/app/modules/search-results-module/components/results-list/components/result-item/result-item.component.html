@@ -1,0 +1,19 @@
+<div class="item-container">
+    <section class="image" (click)="handleClick()">
+        <img 
+            width="150"
+            height="150"
+            [src]="imageSrc"
+            [alt]="title"
+        >
+    </section>
+    <section class="information">
+        <price-label
+            [price]="price"
+        ></price-label>
+        <p (click)="handleClick()">{{title}}</p>
+    </section>
+    <section class="location">
+        <h3>{{location}}</h3>
+    </section>
+</div>

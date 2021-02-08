@@ -1,0 +1,28 @@
+<ng-container *ngIf="selectedItem">
+    <div class="container">
+        <section class="details">
+            <div class="image">
+                <img
+                    [src]="selectedItem.picture"
+                    [alt]="selectedItem.title"
+                    height="400"
+                    width="400"
+                >
+            </div>
+            <ng-container *ngIf="selectedItem.description">
+                <div class="description">
+                    <h2>Descripción del Producto</h2>
+                    <p>{{selectedItem.description}}</p>
+                </div>
+            </ng-container>
+        </section>
+        <section class="buying-info">
+            <app-buying-card
+                [price]="selectedItem.price"
+                [condition]="selectedItem.condition"
+                [soldNumber]="selectedItem.sold_quantity"
+                [title]="selectedItem.title"
+            ></app-buying-card>
+        </section>
+    </div>
+</ng-container>

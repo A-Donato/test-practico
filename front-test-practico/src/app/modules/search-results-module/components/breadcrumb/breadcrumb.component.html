@@ -1,0 +1,11 @@
+<div class="container">
+    <ng-container *ngFor="let category of catergories; let i=index">
+        <a [href]="category.link" type="link" >{{category.label}}</a>
+        <ng-container *ngIf="i+1 < this.catergories.length">
+        <span class="separator">
+            >
+        </span>
+        </ng-container>
+        
+    </ng-container>
+</div>
