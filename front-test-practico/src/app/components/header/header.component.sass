@@ -8,13 +8,13 @@
     display: flex
     justify-content: center
     align-items: center
-    background-color: map-get($custom-colors, yellow-background)
+    background-color: $ml-yellow
 
     .search-bar
-      width: map-get($custom-width, view)
+      width: $custom-width
 
 
-  @media (max-width: 865px) 
+  @media (max-width: $custom-width) 
     .header-container
       width: auto
       padding: 0 1rem

@@ -1,3 +1,5 @@
+@import src/styles/_variables.sass
+
 :host
     display: flex
     flex-direction: column
@@ -5,11 +7,11 @@
     width: 100%
 
     .container
-        width: 865px
+        width: $custom-width
         margin: auto
 
 
-@media (max-width: 865px) 
+@media (max-width: $custom-width) 
 .container
     padding: 0 1rem
 
