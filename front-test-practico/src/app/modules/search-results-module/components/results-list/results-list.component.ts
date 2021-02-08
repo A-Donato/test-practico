@@ -1,6 +1,6 @@
-import { SearchItem, SearchResponse } from './../../../../models/searchResponse';
-import { SearchResultsService } from './../services/search-results.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { SearchItem } from 'src/app/models/searchResponse';
+import { SearchResultsService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-results-list',
@@ -8,14 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./results-list.component.sass']
 })
 export class ResultsListComponent implements OnInit {
-  @Input() searchResultItems: SearchItem[] | undefined = [];
+  @Input() searchResultItems: SearchItem[] = [];
 
   constructor( private searchResultService: SearchResultsService ) { }
 
   ngOnInit(): void {
     this.searchResultService.getSearchResults().subscribe(results => {
-      this.searchResultItems = results?.items;
-      console.log('this.searchResultItems', this.searchResultItems)
+      this.searchResultItems = results ? results!.items : [];
     })
   }
 

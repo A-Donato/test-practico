@@ -1,4 +1,4 @@
-<section class="search-results">
+<section class="search-results" *ngIf="searchResultItems.length > 0">
     <ng-container *ngFor="let item of searchResultItems" >
         <search-result-item
             [price]="item.price"
@@ -8,5 +8,4 @@
             [itemId]="item.id"
         ></search-result-item>
     </ng-container>
-    
 </section>

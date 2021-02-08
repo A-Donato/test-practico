@@ -19,7 +19,7 @@ export class SearchResultsService {
     const searchParams = new HttpParams().set('q', searchText);
     this.httpClient.get<SearchResponse>(environment.endpoints.search, {params: searchParams}).subscribe((response => {
       this._searchResults.next(response);
-      this._breadcrumItems.next(response.categories.slice(0,3));
+      this._breadcrumItems.next(response.categories.slice(0,3)); // Too many results, just showing top 3;
     }));
   }
 

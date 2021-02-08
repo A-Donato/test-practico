@@ -2,16 +2,17 @@
     <img
         class="img-logo"
         src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.12.1/mercadolibre/logo__small.png"
-        alt="Logo Meli"
+        alt="Logo Mercado Libre"
     >
     <input
         class="search-box" 
         type="text"
+        [value]="searchText"
         [placeholder]="placeHolderText"
         (change)="updateSearchText($event)"
         (keyup.enter)="triggerSearch($event)"
     />
-    <button class="btn-icon">
+    <button class="btn-icon" (click)="triggerSearch($event)">
         <mat-icon aria-hidden="false" aria-label="search icon">search</mat-icon>
     </button>
 </div>

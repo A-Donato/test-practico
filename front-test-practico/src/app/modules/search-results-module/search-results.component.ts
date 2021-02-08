@@ -1,4 +1,4 @@
-import { SearchResultsService } from './components/services/search-results.service';
+import { SearchResultsService } from 'src/app/services/search.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 

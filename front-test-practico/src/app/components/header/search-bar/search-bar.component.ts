@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -8,23 +9,22 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class SearchBarComponent implements OnInit {
   @Output() onSearch = new EventEmitter<string>();
   readonly placeHolderText = 'Nunca dejes de buscar';
-  searchText = '';
+  searchText: string = '';
 
-  constructor() { }
+  constructor( private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
+    this.route.queryParamMap.subscribe( queryParams => {
+      this.searchText = queryParams.get('search') !== null ? queryParams.get('search')! : this.searchText;
+    });
   }
 
   updateSearchText(event: any) {
     const newText = event.target.value;
     this.searchText = newText;
-
   }
 
   triggerSearch(event: any) {
-    console.log('emitimos el search', this.searchText);
     this.onSearch.emit(this.searchText);
-
   }
-
 }
